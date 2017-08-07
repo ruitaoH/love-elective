@@ -17,6 +17,3 @@ npm run build --report
 ```
 
 For detailed explanation on how things work, checkout the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
-=======
-# love-elective
->>>>>>> 98ad32bd0c3fc1cdca6be982e6afb38941c6da6b
