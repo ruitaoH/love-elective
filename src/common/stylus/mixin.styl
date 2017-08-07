@@ -1,0 +1,15 @@
+// 不换行
+no-wrap()
+  overflow: hidden
+  white-space: nowrap
+  text-overflow: ellipsis
+
+extend-click()
+  position: relative
+  &:before
+    content: ''
+    position: absolute
+    top: -0.14rem
+    bottom: -0.14rem
+    left: -0.14rem
+    right: -0.14rem

@@ -1,0 +1,6 @@
+export const SET_USER = 'SET_USER'
+export const SET_COURSE = 'SET_COURSE'
+export const SET_FILTER = 'SET_FILTER'
+export const SET_FILTER_SHOW = 'SET_FILTER_SHOW'
+export const SET_FILTER_SHOW_TYPE = 'SET_FILTER_SHOW_TYPE'
+export const SET_SEARCH_HISTORY = 'SET_SEARCH_HISTORY'
