@@ -8,7 +8,7 @@ import qs from 'qs'
  * 课程详情接口
  */
 export function getCourseDetailInfo (userId, course) {
-  const url = '/api/v1/user/course_detail'
+  const url = '/newixuanxiu/api/v1/user/course_detail'
 
   const data = {
     user_id: userId,
@@ -28,7 +28,7 @@ export function getCourseDetailInfo (userId, course) {
  * 点赞接口
  */
 export function postApproval (userId, course, commentId) {
-  const url = '/api/v1/user/approval'
+  const url = '/newixuanxiu/api/v1/user/approval'
 
   const data = qs.stringify({
     'user_id': userId,
@@ -46,7 +46,7 @@ export function postApproval (userId, course, commentId) {
  * 取消点赞接口
  */
 export function postDisapproval (userId, course, commentId) {
-  const url = '/api/v1/user/disapproval'
+  const url = '/newixuanxiu/api/v1/user/disapproval'
 
   const data = qs.stringify({
     'user_id': userId,

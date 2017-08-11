@@ -8,7 +8,7 @@ import qs from 'qs'
  * 搜索接口
  */
 export function getSearch (content) {
-  const url = '/api/v1/user/search_course'
+  const url = '/newixuanxiu/api/v1/user/search_course'
 
   const data = qs.stringify({
     'search_content': content
@@ -23,7 +23,7 @@ export function getSearch (content) {
  *  热搜接口
  */
 export function getHotSearch () {
-  const url = '/api/v1/user/hot_search'
+  const url = '/newixuanxiu/api/v1/user/hot_search'
 
   return axios.get(url).then((res) => {
     return Promise.resolve(res.data)

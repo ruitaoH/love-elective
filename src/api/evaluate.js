@@ -8,7 +8,7 @@ import qs from 'qs'
  * 获取评价内容接口
  */
 export function getEvaluatedInfo (userId, course) {
-  const url = '/api/v1/user/modify_assessment'
+  const url = '/newixuanxiu/api/v1/user/modify_assessment'
 
   const data = {
     'user_id': userId,
@@ -28,7 +28,7 @@ export function getEvaluatedInfo (userId, course) {
  * 评价接口
  */
 export function postEvaluate (userId, course, comment) {
-  const url = '/api/v1/user/fill_assess'
+  const url = '/newixuanxiu/api/v1/user/fill_assess'
 
   const data = qs.stringify({
     'user_id': userId,

@@ -7,7 +7,7 @@ import axios from 'axios'
  * 课程接口
  */
 export function getCourseList () {
-  const url = '/api/v1/user/homepage'
+  const url = '/newixuanxiu/api/v1/user/homepage'
 
   const data = {
     type: 'all'

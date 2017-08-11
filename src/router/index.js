@@ -15,6 +15,7 @@ import Evaluate from 'components/evaluate/evaluate'
 Vue.use(Router)
 
 export default new Router({
+  base: '/newixuanxiu/',
   routes: [
     {
       path: '/',
