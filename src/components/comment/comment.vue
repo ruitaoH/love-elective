@@ -58,7 +58,7 @@
 
     <!-- 二级路由: 评价表单 -->
     <transition name="slide">
-      <router-view></router-view>
+      <router-view @changeShowFlag="changeShowFlag" @updateComments="updateComments"></router-view>
     </transition>
   </div>
 </template>
@@ -83,9 +83,10 @@ export default {
     }
   },
   activated () {
-    if (!this.user) {
-      this._getComment()
-    }
+    this.updateComments()
+  },
+  deactivated () {
+    this.showFlag = false
   },
   methods: {
     evaluateNew () {
@@ -94,6 +95,14 @@ export default {
     editEvaluate (course) {
       this.setCourse(course)
       this.$router.push(`/comment/${course.course_teacher}/${course.course_name}`)
+    },
+    changeShowFlag () {
+      this.showFlag = false
+    },
+    updateComments () {
+      if (!this.showFlag) {
+        this._getComment()
+      }
     },
     _getComment () {
       if (this.userId === -1) {

@@ -1,5 +1,5 @@
 <template>
-  <div class="footer-button" @click="clickHandler">
+  <div class="footer-button" @click="clickHandler" ref="footerButton">
     <span class="text">{{ title }}</span>
   </div>
 </template>
@@ -24,10 +24,7 @@ export default {
 @import "~common/stylus/variable"
 
 .footer-button
-  position: fixed
-  left: 0
-  right: 0
-  bottom: 0
+  width: 100%
   height: 0.98rem
   text-align: center
   background: $linear-gradient

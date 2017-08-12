@@ -4,3 +4,4 @@ export const filters = state => state.filters
 export const filterShow = state => state.filterShow
 export const filterShowType = state => state.filterShowType
 export const searchHistory = state => state.searchHistory
+export const showToast = state => state.showToast

@@ -51,7 +51,8 @@ const state = {
       ]
     }
   },
-  searchHistory: loadSearch()
+  searchHistory: loadSearch(),
+  showToast: false
 }
 
 export default state

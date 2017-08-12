@@ -96,7 +96,9 @@
     </div>
 
     <!-- 底部button -->
-    <footer-button title="添加评价" @click="showEvaluate" v-show="showFlag"></footer-button>
+    <div class="footer-button-wrapper">
+      <footer-button title="添加评价" @click="showEvaluate" v-show="showFlag"></footer-button>
+    </div>
 
     <!-- 三级路由: 评价表单 -->
     <transition name="slide">
@@ -249,23 +251,25 @@ export default {
   },
   computed: {
     flag () {
-      if (this.courseQuality.best === this.courseQuality.common && this.courseQuality.best === this.courseQuality.terrible) {
+      let { best, common, terrible } = this.courseQuality
+
+      if (best === common && best === terrible && common === terrible) {
         return ''
       }
 
-      let res
-      let max = -1
-
-      for (let k in this.courseQuality) {
-        let v = this.courseQuality[k]
-
-        if (v > max) {
-          res = k
-          max = v
-        }
+      if (best === common && best > terrible) {
+        return ''
       }
 
-      return res
+      if (best === terrible && best > common) {
+        return ''
+      }
+
+      if (common === terrible && common > best) {
+        return ''
+      }
+
+      return best > common ? (best > terrible ? 'best' : 'terrible') : (common > terrible ? 'common' : 'terrible')
     },
     wonderfulComments () {
       let comments = this.latestComments.slice(0) // 克隆数组
@@ -475,6 +479,11 @@ export default {
       width: 100%
       top: 50%
       transform: translateY(-50%)
+  .footer-button-wrapper
+    position: fixed
+    left: 0
+    right: 0
+    bottom: 0
   .slide-enter-active, .slide-leave-active
     transition: transform 0.4s
   .slide-enter, .slide-leave-to

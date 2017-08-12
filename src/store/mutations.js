@@ -18,6 +18,9 @@ const mutations = {
   },
   [types.SET_SEARCH_HISTORY] (state, searchHistory) {
     state.searchHistory = searchHistory
+  },
+  [types.SET_SHOWTOAST] (state, flag) {
+    state.showToast = flag
   }
 }
 

@@ -7,7 +7,7 @@
         </div>
 
         <div class="content-wrapper">
-          <h1 class="name">{{ comment.nickname }}</h1>
+          <h1 class="name">{{ getNickname(comment) }}</h1>
           <h2 class="time">{{ `${comment.evaluate_year}年${comment.evaluate_month}月${comment.evaluate_day}日` }}</h2>
           <p class="content">{{ comment.evaluate_content }}</p>
 
@@ -23,6 +23,8 @@
 
 <script>
 import Avatar from 'components/avatar/avatar'
+
+const ANONYMOUS = 1
 
 export default {
   props: {
@@ -41,6 +43,15 @@ export default {
         this.$emit('disapproval', { index, commentId })
       } else { // 点赞
         this.$emit('approval', { index, commentId })
+      }
+    },
+    getNickname (comment) {
+      let isAnonymous = comment.is_anonymous
+
+      if (isAnonymous === ANONYMOUS) {
+        return '匿名用户'
+      } else {
+        return comment.nickname
       }
     }
   },

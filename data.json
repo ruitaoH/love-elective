@@ -201,8 +201,8 @@
     },
     "course_quality": {
       "best": 3,
-      "common": 20,
-      "terrible": 3
+      "common": 3,
+      "terrible": 0
     },
     "wonderful_comments": [
       {

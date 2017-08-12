@@ -87,7 +87,7 @@ export default {
   .button
     flex: 0 0 1.3rem
     width: 1.3rem
-    line-height: 0.68rem
+    line-height: 0.66rem
     text-align: center
     font-size: $font-size-large
     color: $color-text

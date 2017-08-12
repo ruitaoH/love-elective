@@ -1,6 +1,6 @@
 <template>
   <div class="avatar">
-    <img class="img" :src="src" v-if="isAnonymous" />
+    <img class="img" :src="src" v-if="!isAnonymous" />
     <img class="img" src="./anonymous.png" v-else />
   </div>
 </template>
